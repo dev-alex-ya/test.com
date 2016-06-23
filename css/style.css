@@ -1,0 +1,57 @@
+/*убираем маркеры в меню, добавляем отступы*/
+li {
+	list-style-type:none;
+	margin-top:1.5vw;
+	color: white;
+	/*margin-left:0.5vw;*/
+	
+}
+ul li {
+	font-size: 90%;
+	padding: 0;
+}
+
+/*это будет шапка*/
+.head{
+	width:100%;
+        background-color: activecaption;
+        
+	margin:auto;
+	display:block;
+	overflow:hidden;
+	height:10vw;
+	float:left;
+}
+/*основной блок. тело страницы*/
+.all {
+	width:100%;
+	overflow:hidden;
+        background-color: beige;
+}
+/*это будет меню, сделаем шрифт по-больше и по-жирнее)),а еще добавим фоновый цвет*/
+.my_menu{
+	width:17%;
+	float:left;
+	text-align:left;
+	/*margin-top:1vw;*/
+	font-size:1.5vw;        
+	background-size: 100%;
+	background-color: gainsboro;
+	height:100%;
+}
+
+/*это блок таблицы. его ограничу 82% монитора*/
+.my_table {
+	width:82%;
+	height:100%;
+	float:right;
+        
+}
+table{
+	width:100%;
+	border-spacing: 0px;
+	padding: 0px;	
+}
+th{
+	outline: 2px solid #000;
+}
