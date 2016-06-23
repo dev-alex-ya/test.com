@@ -31,6 +31,5 @@ if(!empty($_GET['id'])) //удаляем роль из БД
 }
 else //отображаем все роли
 {
-    $checks = Check::getAll();
-    
+    $checks = Check::getAll();    
 }
