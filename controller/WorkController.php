@@ -21,7 +21,7 @@ if(!empty($_POST['title'])) //добавляем роль в БД
         Work::insertWork($title, $description, $cost);
     }    
     header('Refresh: 10; url=http://test.com/newWork.php');
-    echo 'insert Work: '. "$id, title=$title, description=$description, cost=$cost";
+    echo 'insert Work: '. "id, title=$title, description=$description, cost=$cost";
 }
 if(!empty($_GET['id'])) //удаляем роль из БД
 {   

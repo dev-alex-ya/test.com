@@ -4,8 +4,29 @@ include_once 'config.php';
 class Person {
     static public function getAll()
     {
-        
         $query = "SELECT p.id, p.firstname, p.middlename, p.lastname, r.title, p.phone, p.address, p.card FROM b7_18317604_persons AS p, b7_18317604_person_role AS r WHERE p.id_role = r.id ORDER BY p.id";
+        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);                
+        $db->query("SET NAMES 'utf8'");
+        $result = $db->query($query) or die($db->error);
+        $db->close();
+        return $result->fetch_all();
+    }
+    
+    static public function getManagers()
+    {
+        $query = "SELECT p.id, p.firstname, p.middlename, p.lastname, r.title, p.phone, p.address, p.card "
+               . "FROM b7_18317604_persons AS p, b7_18317604_person_role AS r WHERE p.id_role = r.id AND r.title = 'Менеджер' ORDER BY p.id";
+        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);                
+        $db->query("SET NAMES 'utf8'");
+        $result = $db->query($query) or die($db->error);
+        $db->close();
+        return $result->fetch_all();
+    }
+    
+    static public function getClients()
+    {
+        $query = "SELECT p.id, p.firstname, p.middlename, p.lastname, r.title, p.phone, p.address, p.card "
+               . "FROM b7_18317604_persons AS p, b7_18317604_person_role AS r WHERE p.id_role = r.id AND r.id = 'Клиент' ORDER BY p.id";
         $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);                
         $db->query("SET NAMES 'utf8'");
         $result = $db->query($query) or die($db->error);

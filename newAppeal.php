@@ -45,7 +45,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/AppealController.php';
                     <th>Удаление записи</th>
                 </tr>
                 <?php
-                print_r($appeals);
+                //print_r($appeals);
                 $N = count($appeals);
                 for ($i = 0; $i < $N; $i++)
                 {

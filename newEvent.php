@@ -47,8 +47,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
                     <tr>
                         <td>Описание:</td>
                         <td><textarea rows="5" cols="51" maxlength="200" name="description"></textarea></td>
-                        
-                    </tr>                    
+                    </tr>
                     <tr>
                         <td colspan="2">
                             <input type="hidden" name="id">
@@ -58,7 +57,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
                 </table>
             </form>
         </div>
-        
         <!--таблица персон из БД-->
         <div class="my_table">
             <table border="1" cellpadding="5" cellspacing="0" width="50%">

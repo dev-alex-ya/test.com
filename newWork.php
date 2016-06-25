@@ -50,7 +50,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/WorkController.php';
                     <th>Удаление записи</th>
                 </tr>
                 <?php
-                print_r($works);
+                //print_r($works);
                 $N = count($works);
                 for ($i = 0; $i < $N; $i++)
                 {
@@ -69,7 +69,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/WorkController.php';
                             <?= $works[$i][3]; ?>
                         </td>
                         <td>
-                            <a href="http://test.com/controller/WorksController.php?id=<?= $works[$i][0];?>">Удалить</a>
+                            <a href="http://test.com/controller/WorkController.php?id=<?= $works[$i][0];?>">Удалить</a>
                         </td>
                     </tr>
                     <?php

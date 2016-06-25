@@ -39,7 +39,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/RoleController.php';
                     <th>Удаление записи</th>
                 </tr>
                 <?php
-                print_r($roles);
+                //print_r($roles);
                 $N = count($roles);
                 for ($i = 0; $i < $N; $i++)
                 {

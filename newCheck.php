@@ -72,10 +72,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/CheckController.php';
             </form>
         </div>
         
-        <!--таблица персон из БД-->
+        <!--таблица чеков из БД-->
         <div class="my_table">
             <table border="1" cellpadding="5" cellspacing="0" width="50%">
-                <caption><h2>Персоны из базы</h2></caption>
+                <caption><h2>Чеки из базы</h2></caption>
                 <tr>
                     <th>ID</th>
                     <th>Получил на руки</th>
