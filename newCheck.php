@@ -1,5 +1,8 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/CheckController.php';
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+include_once $_SERVER["SERVER_ROOT"].'/controller/CheckController.php';
 ?>
 <!Doctype html>
 <head>
@@ -15,7 +18,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/CheckController.php';
             <?php include 'menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/CheckController.php" method="POST">
+            <form action="/controller/CheckController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новый чек</h2></caption>                    
                     <tr>
@@ -89,9 +92,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/CheckController.php';
                     <th>Долг по заявке</th>
                     <th>Перечисления</th>
                     <th>Дата перевода</th>
+                    <th>Функции</th>
                 </tr>
                 <?php
-                print_r($checks);
+                //print_r($checks);
                 $M = count($checks);
                 for($i = 0; $i < $M; $i++)
                 {
@@ -99,13 +103,22 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/CheckController.php';
                     $N = count($checks[$i]);
                     for($j = 0; $j < $N; $j++)
                     {
-                        echo '<td>';
-                        echo $checks[$i][$j];
-                        echo '</td>';
+                        if($j ==11)
+                        {
+                            echo '<td>';
+                            echo date('d-m-Y', $checks[$i][$j]);
+                            echo '</td>';
+                        }
+                        else
+                        {
+                            echo '<td>';
+                            echo $checks[$i][$j];
+                            echo '</td>';
+                        }
                     }
                     echo '<td>';
                     
-                    echo '<a href="http://test.com/controller/CheckController.php?id=' .$checks[$i][0]. '">Удалить</a>';
+                    echo '<a href="/controller/CheckController.php?id=' .$checks[$i][0]. '">Удалить</a>';
                     echo '</td>';
                     echo '</tr>';
                 }

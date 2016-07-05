@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/RoleController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/RoleController.php';
 ?>
 <!Doctype html>
 <head>
@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/RoleController.php';
             <?php include 'menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/RoleController.php" method="POST">
+            <form action="<?php $_SERVER["SERVER_ROOT"]?>/controller/RoleController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новую роль</h2></caption>
                     <tr>
@@ -52,7 +52,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/RoleController.php';
                             <?= $roles[$i][1]; ?>
                         </td>
                         <td>
-                            <a href="http://test.com/controller/RoleController.php?id=<?= $roles[$i][0];?>">Удалить</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/controller/RoleController.php?id=<?= $roles[$i][0];?>">Удалить</a>
                         </td>
                     </tr>
                     <?php

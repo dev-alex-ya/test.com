@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/RoleController.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/PersonController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/RoleController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/PersonController.php';
 ?>
 <!Doctype html>
 <head>
@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/PersonController.php';
             <?php include 'menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/PersonController.php" method="POST">
+            <form action="<?php $_SERVER["SERVER_ROOT"]?>/controller/PersonController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новую персону</h2></caption>
                     <tr>
@@ -35,7 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/PersonController.php';
                         <td>Роль:</td>
                         <td>
                             <select name="id_role" size="1" required>
-                                <option>Выбрать роль</option>                                
+                                <option>Выбрать роль</option>
                                 <?php
                                 $roles = Role::getAll();
                                 $N = count($roles);
@@ -45,7 +45,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/PersonController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newRole.php">Настройка ролей</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/newRole.php">Настройка ролей</a>
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/PersonController.php';
                     }
                     echo '<td>';
                     
-                    echo '<a href="http://test.com/controller/PersonController.php?id=' .$persons[$i][0]. '">Удалить</a>';
+                    echo '<a href="'.$_SERVER["SERVER_ROOT"].'/controller/PersonController.php?id=' .$persons[$i][0]. '">Удалить</a>';
                     echo '</td>';
                     echo '</tr>';
                 }

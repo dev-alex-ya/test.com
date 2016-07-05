@@ -1,7 +1,11 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/BrandController.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectTypeController.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectController.php';
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+include_once $_SERVER["SERVER_ROOT"].'/controller/BrandController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/ObjectTypeController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/ObjectController.php';
 ?>
 <!Doctype html>
 <head>
@@ -10,14 +14,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectController.php';
 </head>
 <body>
     <div class="head">
-        <?php include 'header.php'; ?>
+        <?php include $_SERVER["SERVER_ROOT"].'/header.php'; ?>
     </div>
     <div class="all">
         <div class="my_menu">
-            <?php include 'menu.php'; ?>
+            <?php include $_SERVER["SERVER_ROOT"].'/menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/ObjectController.php" method="POST">
+            <form action="/controller/ObjectController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новый объект</h2></caption>                                            
                     <tr>
@@ -34,7 +38,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newObjectType.php">Настройка типов</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/newObjectType.php">Настройка типов</a>
                         </td>
                     </tr>
                     <tr>
@@ -51,7 +55,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newBrand.php">Настройка брендов</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/newBrand.php">Настройка брендов</a>
                         </td>
                     </tr>
                     <tr>
@@ -104,7 +108,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectController.php';
                     }
                     echo '<td>';
                     
-                    echo '<a href="http://test.com/controller/ObjectController.php?id=' .$objects[$i][0]. '">Удалить</a>';
+                    echo '<a href="/controller/ObjectController.php?id=' .$objects[$i][0]. '">Удалить</a>';
                     echo '</td>';
                     echo '</tr>';
                 }

@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/WorkController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/WorkController.php';
 ?>
 <!Doctype html>
 <head>
@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/WorkController.php';
             <?php include 'menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/WorkController.php" method="POST">
+            <form action="/controller/WorkController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новую работу</h2></caption>
                     <tr>
@@ -69,7 +69,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/WorkController.php';
                             <?= $works[$i][3]; ?>
                         </td>
                         <td>
-                            <a href="http://test.com/controller/WorkController.php?id=<?= $works[$i][0];?>">Удалить</a>
+                            <a href="/controller/WorkController.php?id=<?= $works[$i][0];?>">Удалить</a>
                         </td>
                     </tr>
                     <?php

@@ -1,5 +1,9 @@
 <?php
-include_once 'config.php';
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+include_once $_SERVER["SERVER_ROOT"].'/model/config.php';
+
 class Check {
     static public function getAll()
     {
@@ -30,7 +34,10 @@ class Check {
         mysqli_close($link);
     }
     
-    static public function updateCheck($id){}
+    static public function updateCheck($id)
+    {
+        //to do
+    }
 
     static public function removeById($id)
     {

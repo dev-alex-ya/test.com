@@ -1,8 +1,8 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Order.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Calendar.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Appeal.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Order.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Calendar.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Appeal.php';
 
 $events;
 $next7days;
@@ -36,7 +36,7 @@ if(!empty($_POST['id_object'])) //добавляем заказ в БД
             $source, $id_manager, $id_object, $appealString,
             $id_event, $id_check, $comment);
     }    
-    header('Refresh: 10; url=http://test.com/newOrder.php');
+    header('Refresh: 3; url=http://myserviceapp.byethost7.com/newOrder.php');
     echo 'insert order: '. "id=, date_in=$date_in, status=$status, "
             . "date_out=$date_out, id_source=$source, id_manager=$id_manager, "
             . "id_object =$id_object, appeal=$appealString, "
@@ -45,7 +45,7 @@ if(!empty($_POST['id_object'])) //добавляем заказ в БД
 if(!empty($_GET['id'])) //удаляем заказ из БД
 {   
     Order::removeById($_GET['id']);
-    header('Refresh: 10; url=http://test.com/newOrder.php');
+    header('Refresh: 3; url=http://myserviceapp.byethost7.com/newOrder.php');
     echo 'delete order by id='.$_GET['id'];
 }
 else //отображаем все роли

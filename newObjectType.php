@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectTypeController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/ObjectTypeController.php';
 ?>
 <!Doctype html>
 <head>
@@ -8,14 +8,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectTypeController.php';
 </head>
 <body>
     <div class="head">
-        <?php include 'header.php'; ?>
+        <?php include $_SERVER["SERVER_ROOT"].'/header.php'; ?>
     </div>
     <div class="all">
         <div class="my_menu">
-            <?php include 'menu.php'; ?>
+            <?php include $_SERVER["SERVER_ROOT"].'/menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/ObjectTypeController.php" method="POST">
+            <form action="/controller/ObjectTypeController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новый тип объекта</h2></caption>
                     <tr>
@@ -39,7 +39,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectTypeController.php';
                     <th>Удаление записи</th>
                 </tr>
                 <?php
-                print_r($types);
+                //print_r($types);
                 $N = count($types);
                 for ($i = 0; $i < $N; $i++)
                 {
@@ -52,7 +52,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/ObjectTypeController.php';
                             <?= $types[$i][1]; ?>
                         </td>
                         <td>
-                            <a href="http://test.com/controller/ObjectTypeController.php?id=<?= $types[$i][0];?>">Удалить</a>
+                            <a href="/controller/ObjectTypeController.php?id=<?= $types[$i][0];?>">Удалить</a>
                         </td>
                     </tr>
                     <?php

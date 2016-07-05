@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/alex/NetBeansProjects/test.com/controller/WorkController.php</file>
-            <file>file:/home/alex/NetBeansProjects/test.com/newAppeal.php</file>
+            <file>file:/home/alex/NetBeansProjects/test.com/controller/indexController.php</file>
             <file>file:/home/alex/NetBeansProjects/test.com/controller/OrderController.php</file>
-            <file>file:/home/alex/NetBeansProjects/test.com/newRole.php</file>
+            <file>file:/home/alex/NetBeansProjects/test.com/newEvent.php</file>
+            <file>file:/home/alex/NetBeansProjects/test.com/index.php</file>
             <file>file:/home/alex/NetBeansProjects/test.com/newOrder.php</file>
             <file>file:/home/alex/NetBeansProjects/test.com/model/Order.php</file>
-            <file>file:/home/alex/NetBeansProjects/test.com/newWork.php</file>
         </group>
     </open-files>
 </project-private>

@@ -14,12 +14,13 @@ ul li {
 /*это будет шапка*/
 .head{
 	width:100%;
-        background-color: activecaption;
-        
+       /* background-color: activecaption;*/
+        background: url(http://myserviceapp.byethost7.com/img/head_fon.jpg) no-repeat;
+        background-size: 1500px 300px;
 	margin:auto;
 	display:block;
 	overflow:hidden;
-	height:10vw;
+	height:18vw;
 	float:left;
 }
 /*основной блок. тело страницы*/

@@ -1,4 +1,5 @@
 <?php
+
 class Calendar {
     static public function strToTimestamp($str) {
         

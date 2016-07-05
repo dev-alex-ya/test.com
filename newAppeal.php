@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/AppealController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/AppealController.php';
 ?>
 <!Doctype html>
 <head>
@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/AppealController.php';
             <?php include 'menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/AppealController.php" method="POST">
+            <form action="<?php $_SERVER["SERVER_ROOT"]?>/controller/AppealController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новую жалобу</h2></caption>
                     <tr>
@@ -61,7 +61,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/AppealController.php';
                             <?= $appeals[$i][2]; ?>
                         </td>
                         <td>
-                            <a href="http://test.com/controller/AppealController.php?id=<?= $appeals[$i][0];?>">Удалить</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/controller/AppealController.php?id=<?= $appeals[$i][0];?>">Удалить</a>
                         </td>
                     </tr>
                     <?php

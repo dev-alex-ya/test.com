@@ -1,12 +1,12 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Order.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Person.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Object.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Appeal.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Check.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Event.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'model/Calendar.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Order.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Person.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Object.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Appeal.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Check.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Event.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/Calendar.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/OrderController.php';
 ?>
 <!Doctype html>
 <head>
@@ -15,14 +15,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
 </head>
 <body>
     <div class="head">
-        <?php include 'header.php'; ?>
+        <?php include $_SERVER["SERVER_ROOT"].'/header.php'; ?>
     </div>
     <div class="all">
         <div class="my_menu">
-            <?php include 'menu.php'; ?>
+            <?php include $_SERVER["SERVER_ROOT"].'/menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/OrderController.php" method="POST">
+            <form action="/controller/OrderController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новый заказ</h2></caption>
                     <tr>
@@ -73,7 +73,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newPerson.php">Настройка персон</a>
+                            <a href="/newPerson.php">Настройка персон</a>
                         </td>
                     </tr>
                     
@@ -91,7 +91,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newObjects.php">Настройка объектов</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/newObject.php">Настройка объектов</a>
                         </td>
                     </tr>
                     
@@ -108,7 +108,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newAppeal.php">Настройка жалоб</a>
+                            <a href="/newAppeal.php">Настройка жалоб</a>
                         </td>
                     </tr>
                     
@@ -126,7 +126,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newEvent.php">Настройка событий</a>
+                            <a href="/newEvent.php">Настройка событий</a>
                         </td>
                     </tr>
                     
@@ -144,7 +144,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newCheck.php">Настройка чеков</a>
+                            <a href="/newCheck.php">Настройка чеков</a>
                         </td>
                     </tr>
                     <tr>
@@ -202,8 +202,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/OrderController.php';
                         }
                     }
                     echo '<td>';
-                    
-                    echo '<a href="http://test.com/controller/OrderController.php?id=' .$orders[$i][0]. '">Удалить</a>';
+                    echo '<a href="/controller/OrderController.php?id='.$orders[$i][0].'">Удалить</a>';
                     echo '</td>';
                     echo '</tr>';
                 }

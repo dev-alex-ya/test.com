@@ -1,6 +1,11 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/PersonController.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+
+include_once $_SERVER["SERVER_ROOT"].'/controller/PersonController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/EventController.php';
 ?>
 <!Doctype html>
 <head>
@@ -9,14 +14,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
 </head>
 <body>
     <div class="head">
-        <?php include 'header.php'; ?>
+        <?php include $_SERVER["SERVER_ROOT"].'/header.php'; ?>
     </div>
     <div class="all">
         <div class="my_menu">
-            <?php include 'menu.php'; ?>
+            <?php include $_SERVER["SERVER_ROOT"].'/menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/EventController.php" method="POST">
+            <form action="/controller/EventController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новое событие</h2></caption>                    
                     <tr>
@@ -33,7 +38,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
                                 }
                                 ?>
                             </select>
-                            <a href="http://test.com/newPerson.php">Настройка персон</a>
+                            <a href="<?php $_SERVER["SERVER_ROOT"]?>/newPerson.php">Настройка персон</a>
                         </td>
                     </tr>
                     <tr>
@@ -57,37 +62,45 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
                 </table>
             </form>
         </div>
-        <!--таблица персон из БД-->
+        
+        <!--таблица событий из БД-->
         <div class="my_table">
             <table border="1" cellpadding="5" cellspacing="0" width="50%">
-                <caption><h2>Персоны из базы</h2></caption>
+                <caption><h2>Все события</h2></caption>
                 <tr>
                     <th>ID</th>
                     <th>Имя</th>
                     <th>Очество</th>
                     <th>Фамилия</th>
-                    <th>Роль</th>
-                    <th>Телефон</th>
-                    <th>Адрес</th>
-                    <th>Банковская карта</th>
-                    <th>Манипуляции</th>
+                    <th>Начальное время</th>
+                    <th>конечное время</th>
+                    <th>Тема</th>
+                    <th>Описание</th>                        
                 </tr>
                 <?php
-                //print_r($persons);
-                $M = count($persons);
+                //print_r($events);
+                $M = count($events);
                 for($i = 0; $i < $M; $i++)
                 {
                     echo '<tr>';
-                    $N = count($persons[$i]);
+                    $N = count($events[$i]);
                     for($j = 0; $j < $N; $j++)
                     {
-                        echo '<td>';
-                        echo $persons[$i][$j];
-                        echo '</td>';
+                        if($j==5 || $j==4)
+                        {
+                            echo '<td>';
+                            echo date('d-m-Y', $events[$i][$j]);
+                            echo '</td>';
+                        }
+                        else
+                        {
+                            echo '<td>';
+                            echo $events[$i][$j];
+                            echo '</td>';
+                        }
                     }
                     echo '<td>';
-                    
-                    echo '<a href="http://test.com/controller/PersonController.php?id=' .$persons[$i][0]. '">Удалить</a>';
+                    echo '<a href="/controller/EventController.php?id=' .$events[$i][0]. '">Удалить</a>';
                     echo '</td>';
                     echo '</tr>';
                 }

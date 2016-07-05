@@ -1,5 +1,7 @@
 <?php
-include_once 'config.php';
+
+include_once $_SERVER['DOCUMENT_ROOT'].'/model/config.php';
+
 
 class Role 
 {

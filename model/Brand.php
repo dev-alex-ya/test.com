@@ -1,6 +1,6 @@
 <?php
 
-include_once 'config.php';
+include_once $_SERVER["SERVER_ROOT"].'/model/config.php';
 
 class Brand {
     static public function getAll()

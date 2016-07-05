@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/BrandController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/BrandController.php';
 ?>
 <!Doctype html>
 <head>
@@ -8,14 +8,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/BrandController.php';
 </head>
 <body>
     <div class="head">
-        <?php include 'header.php'; ?>
+        <?php include $_SERVER["SERVER_ROOT"].'/header.php'; ?>
     </div>
     <div class="all">
         <div class="my_menu">
-            <?php include 'menu.php'; ?>
+            <?php include $_SERVER["SERVER_ROOT"].'/menu.php'; ?>
         </div>
         <div class="my_table">
-            <form action="http://test.com/controller/BrandController.php" method="POST">
+            <form action="/controller/BrandController.php" method="POST">
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
                     <caption><h2>Добавить новый бренд</h2></caption>
                     <tr>
@@ -39,7 +39,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/BrandController.php';
                     <th>Удаление записи</th>
                 </tr>
                 <?php
-                print_r($brands);
+                //print_r($brands);
                 $N = count($brands);
                 for ($i = 0; $i < $N; $i++)
                 {
@@ -52,7 +52,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/BrandController.php';
                             <?= $brands[$i][1]; ?>
                         </td>
                         <td>
-                            <a href="http://test.com/controller/BrandController.php?id=<?= $brands[$i][0];?>">Удалить</a>
+                            <a href="/controller/BrandController.php?id=<?= $brands[$i][0];?>">Удалить</a>
                         </td>
                     </tr>
                     <?php

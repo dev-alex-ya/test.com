@@ -1,8 +1,9 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/EventController.php';
+include_once $_SERVER["SERVER_ROOT"].'/controller/indexController.php';
 ?>
 <!Doctype html>
-<html>
+<html lang="ru">
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
@@ -16,10 +17,16 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
                 <?php include 'menu.php'; ?>
             </div>
             
-            <!--таблица персон из БД-->
+            <!--таблица событий из БД-->
             <div class="my_table">
+                <form action="/controller/indexController.php" method="POST">
+                    <h2>(Дорабатывается)</h2>
+                    <p>Начиная с: <input type="date" name="calendar_start"></p>
+                    <p>Заканчивая: <input type="date" name="calendar_finish"></p>
+                    <p></p><input type="submit" value="Показать">
+                </form>
                 <table border="1" cellpadding="5" cellspacing="0" width="50%">
-                    <caption><h2>Предстоящие события</h2></caption>
+                    <caption><h2>Предстоящие события (исправилено отображение событий)</h2></caption>
                     <tr>
                         <th>ID</th>
                         <th>Имя</th>
@@ -52,10 +59,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'controller/EventController.php';
                                 echo '</td>';
                             }
                         }
-                        echo '<td>';
-                        echo '<a href="http://test.com/controller/EventController.php?id=' .$events[$i][0]. '">Удалить</a>';
-                        echo '</td>';
-                        echo '</tr>';
+//                        echo '<td>';
+//                        echo '<a href="/controller/EventController.php?id=' .$events[$i][0]. '">Удалить</a>';
+//                        echo '</td>';
+//                        echo '</tr>';
                     }
                     ?>
                 </table>
